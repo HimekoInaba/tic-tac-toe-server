@@ -1,0 +1,61 @@
+{
+  "extends": ["tslint:recommended", "tslint-config-prettier"],
+  "linterOptions": {
+    "exclude": [
+      "node_modules/**/*.ts",
+      "build/**/*.js"
+    ]
+  },
+  "rules": {
+    "ban-types": [true,
+      ["Object", "Use {} instead."],
+      ["String", "Use 'string' instead."],
+      ["Number", "Use 'number' instead."],
+      ["Boolean", "Use 'boolean' instead."]
+    ],
+    "no-reference-import": true,
+    "no-duplicate-variable": true,
+    "no-duplicate-switch-case": true,
+    "no-string-literal": true,
+    "no-unused-expression": true,
+    "no-var-keyword": true,
+    "strict-type-predicates": true,
+    "switch-default": true,
+    "triple-equals": true,
+    "prefer-const": true,
+    "use-isnan": true,
+    "prefer-readonly": true,
+    "arrow-return-shorthand": true,
+    "class-name": true,
+    "increment-decrement": true,
+    "no-unnecessary-callback-wrapper": true,
+    "one-variable-per-declaration": true,
+    "prefer-method-signature": true,
+    "no-internal-module": true,
+    "semicolon": true,
+    "eofline": true,
+    "no-consecutive-blank-lines": true,
+    "whitespace": [true,
+      "check-branch",
+      "check-operator",
+      "check-type-operator",
+      "check-type",
+      "check-decl",
+      "check-preblock",
+      "check-rest-spread",
+      "check-separator",
+      "check-typecast",
+      "check-module"
+    ],
+    "prefer-object-spread": true,
+    "quotemark": [true, "single"],
+    "indent": [true, "spaces", 4],
+    "curly": [true, "ignore-same-line"],
+    // Overrides
+    "ordered-imports": false,
+    "no-console": false,
+    "no-namespace": false,
+    "object-literal-sort-keys": false,
+    "no-empty-interface": false
+  }
+}
