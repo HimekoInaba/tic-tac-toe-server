@@ -1,0 +1,14 @@
+# Typescript build directory.
+dist
+
+# NPM modules.
+node_modules
+
+# IDE and Code editors.
+.idea
+.ide
+.project
+.vscode
+
+# Log files
+*.log
