@@ -1,5 +1,11 @@
 ### Tic-tac-toe game backend
 
+#### Deploy
+TODO: dockerize, implement CI/CD
+0. install node and npm
+1. npm install
+2. npm start
+
 #### How to use
 0. Default host: localhost:8999
 1. POST `/register` (params: name) -> returns sessionId
