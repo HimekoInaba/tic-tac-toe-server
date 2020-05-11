@@ -23,9 +23,6 @@ export class PlayerService {
         );
 
         this.queue.enqueue(sessionId);
-        if (this.queue.length >= 2) {
-            this.startGame();
-        }
     }
 
     public makeMove(sessionId: string, gameId: string, x: number, y: number) {
@@ -33,12 +30,19 @@ export class PlayerService {
         const socket: (WebSocket | undefined) = this.socketMap.get(sessionId);
 
         if (game && socket) {
-            game.move(sessionId, x, y, socket);
+            game.move(sessionId, x, y);
         }
     }
 
     public addSocket(session: string, socket: WebSocket) {
         this.socketMap.set(session, socket);
+        if (this.queue.length >= 2) {
+            this.startGame();
+        }
+    }
+
+    public getSocketBySession(session: string): (WebSocket | undefined){
+        return this.socketMap.get(session);
     }
 
     private startGame() {
