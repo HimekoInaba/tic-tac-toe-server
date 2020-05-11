@@ -21,7 +21,10 @@ export class ApiRouter {
             this.playerService.addPlayer(sessionId, req.body.name);
             res.json(sessionId);
         });
+
+        this.router.post('/game/:gameId', (req, res) => {
+            this.playerService.makeMove(req.body.sessionId, req.params.gameId, req.body.x, req.body.y);
+            res.status(200);
+        });
     }
 }
-
-export default new ApiRouter();
